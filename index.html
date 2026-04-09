@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -319,6 +320,18 @@
             to { opacity: 1; transform: scale(1.2) translateY(5px); }
         }
     </style>
+    <style>
+        /* Dán vào đây */
+        .saint-name {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 0.9em;
+            margin-right: 8px;
+            color: #d4af37;
+        }
+    </style>
 </head>
 <body>
 
@@ -383,12 +396,20 @@
         <div class="announcement-text" data-aos="fade-up">Trân trọng thông báo LỄ TÂN HÔN của</div>
 
         <div class="full-names-display" data-aos="fade-up">
-            <div class="role-title">Út Nữ</div>
-            <div class="name-display">MARIA NGUYỄN THỊ MINH TRÂN</div>
-            <span class="ampersand">&</span>
-            <div class="role-title">Út Nam</div>
-            <div class="name-display">MATTHEW MAI ĐỨC HUY</div>
-        </div>
+    <!-- Phần Cô dâu -->
+    <div class="role-title">Út Nữ</div>
+    <div class="name-display">
+        <span class="saint-name">Maria</span> NGUYỄN THỊ MINH TRÂN
+    </div>
+
+    <span class="ampersand">&</span>
+
+    <!-- Phần Chú rể -->
+    <div class="role-title">Út Nam</div>
+    <div class="name-display">
+        <span class="saint-name">Matthew</span> MAI ĐỨC HUY
+    </div>
+</div>
 
         <div class="invite-text" data-aos="fade-up">Trân trọng kính mời:</div>
         <div id="guest-name" data-aos="fade-up">Quý Khách</div>
@@ -406,11 +427,6 @@
         <div class="cal-year">2026</div>
     </div>
     <div class="calendar-side text-left">THỨ SÁU</div>
-</div>
-
-<!-- Thêm đoạn timeline mới vào đây -->
-<div class="wedding-timeline" data-aos="fade-up" style="text-align: center; margin: 20px 0; font-style: italic; color: #555;">
-    <p>09:30 Đón khách — 10:30 Khai tiệc</p>
 </div>
 
 <div class="lunar-style" data-aos="fade-up">(Tức ngày 15 tháng 03 năm Bính Ngọ)</div>
