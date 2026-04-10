@@ -548,81 +548,137 @@
                 <div class="cal-year-bg">2026</div>
                 <div class="cal-month-fg">May</div>
             </div>
-            <div class="cal-grid-bottom">
-                <div class="cal-weekday-bottom">T2</div>
-                <div class="cal-weekday-bottom">T3</div>
-                <div class="cal-weekday-bottom">T4</div>
-                <div class="cal-weekday-bottom">T5</div>
-                <div class="cal-weekday-bottom">T6</div>
-                <div class="cal-weekday-bottom">T7</div>
-                <div class="cal-weekday-bottom">CN</div>
-                
-                <!-- Hàng 1: Tháng 4 kết thúc vào Thứ 5 (30/4) -->
-                <div class="cal-date-bottom disabled"></div>
-                <div class="cal-date-bottom disabled"></div>
-                <div class="cal-date-bottom disabled"></div>
-                <div class="cal-date-bottom church-day">
-                    <span class="date-num">30</span>
-                    <span class="date-icon">⛪</span>
-                    <small style="display:block; font-size: 8px; position: absolute; bottom: -12px;">Tháng 4</small>
-                </div>
-                
-                <!-- Bắt đầu Tháng 5 -->
-                <div class="cal-date-bottom active-ring">
-                    <span class="date-num">1</span>
-                    <span class="date-icon-ring">💍</span>
-                </div>
-                <div class="cal-date-bottom">2</div>
-                <div class="cal-date-bottom">3</div>
-
-                <!-- Các hàng còn lại -->
-                <div class="cal-date-bottom">4</div>
+           <div class="cal-grid-bottom">
+    <div class="cal-weekday-bottom">T2</div>
+    <div class="cal-weekday-bottom">T3</div>
+    <div class="cal-weekday-bottom">T4</div>
+    <div class="cal-weekday-bottom">T5</div>
+    <div class="cal-weekday-bottom">T6</div>
+    <div class="cal-weekday-bottom">T7</div>
+    <div class="cal-weekday-bottom">CN</div>
+    
+    <!-- Hàng 1 -->
+    <div class="cal-date-bottom disabled"></div>
+    <div class="cal-date-bottom disabled"></div>
+    <div class="cal-date-bottom disabled"></div>
+    
+    <!-- NGÀY 30 THÁNG 4: VÒNG TRÒN XANH + NHÀ THỜ -->
+    <div class="cal-date-bottom special-church">
+        <span class="church-icon">⛪</span>
+        <div class="circle-green">30</div>
+    </div>
+    
+    <!-- NGÀY 1 THÁNG 5: HÌNH CHIẾC NHẪN -->
+    <div class="cal-date-bottom special-ring">
+        <div class="ring-container">
+            <span class="diamond">💎</span>
+            <div class="ring-circle">1</div>
+        </div>
+    </div>
+    
+    <div class="cal-date-bottom">2</div>
+    <div class="cal-date-bottom">3</div>
+    <div class="cal-date-bottom">4</div>
                 <div class="cal-date-bottom">5</div>
                 <div class="cal-date-bottom">6</div>
                 <div class="cal-date-bottom">7</div>
                 <div class="cal-date-bottom">8</div>
                 <div class="cal-date-bottom">9</div>
                 <div class="cal-date-bottom">10</div>
-                <!-- ... Tiếp tục đến ngày 31 giống như code cũ của bạn -->
-            </div>
-            
-            <div class="cal-footer-text" style="margin-top: 20px;">
-                "A happy marriage is a long conversation which always seems too short."
-            </div>
-        </div>
-    </div>
-</section>
+                
+                <div class="cal-date-bottom">11</div>
+                <div class="cal-date-bottom">12</div>
+                <div class="cal-date-bottom">13</div>
+                <div class="cal-date-bottom">14</div>
+                <div class="cal-date-bottom">15</div>
+                <div class="cal-date-bottom">16</div>
+                <div class="cal-date-bottom">17</div>
 
-<!-- THÊM CSS NÀY VÀO PHẦN <style> ĐỂ HIỂN THỊ ICON ĐẸP HƠN -->
+                <div class="cal-date-bottom">18</div>
+                <div class="cal-date-bottom">19</div>
+                <div class="cal-date-bottom">20</div>
+                <div class="cal-date-bottom">21</div>
+                <div class="cal-date-bottom">22</div>
+                <div class="cal-date-bottom">23</div>
+                <div class="cal-date-bottom">24</div>
+
+                <div class="cal-date-bottom">25</div>
+                <div class="cal-date-bottom">26</div>
+                <div class="cal-date-bottom">27</div>
+                <div class="cal-date-bottom">28</div>
+                <div class="cal-date-bottom">29</div>
+                <div class="cal-date-bottom">30</div>
+                <div class="cal-date-bottom">31</div>
+</div>
+
 <style>
-    .cal-date-bottom { position: relative; padding: 10px 0; }
-    
-    /* Style cho ngày 30/4 có nhà thờ */
-    .church-day .date-num { color: #888; }
-    .church-day .date-icon { position: absolute; top: -5px; right: 2px; font-size: 12px; }
+    /* Tổng thể lưới lịch */
+    .cal-grid-bottom {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+    }
 
-    /* Style cho ngày 1/5 có nhẫn và vòng tròn */
-    .active-ring {
-        background-color: #7ba65d !important; /* Màu xanh giống trong ảnh của bạn */
-        color: white !important;
-        border-radius: 50%;
+    /* Style cho ngày 30 - Vòng tròn xanh + Nhà thờ */
+    .special-church {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle-green {
+        background-color: #82ad62; /* Màu xanh lá nhẹ */
+        color: white;
         width: 35px;
         height: 35px;
-        margin: auto;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        z-index: 1;
     }
-    .date-icon-ring {
+    .church-icon {
         position: absolute;
-        top: -10px;
-        right: -5px;
+        top: -18px; /* Đẩy nhà thờ lên trên */
+        font-size: 18px;
+        z-index: 2;
+    }
+
+    /* Style cho ngày 1 - Chiếc nhẫn */
+    .special-ring {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ring-container {
+        position: relative;
+        width: 38px;
+        height: 38px;
+    }
+    .ring-circle {
+        border: 3px solid #d1d1d1; /* Màu nhẫn bạc */
+        color: #82ad62; /* Số 1 màu xanh */
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        background: white;
+    }
+    .diamond {
+        position: absolute;
+        top: -10px; /* Viên kim cương nằm trên nhẫn */
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 14px;
-        transform: rotate(15deg);
+        z-index: 3;
     }
 </style>
-
     <div class="footer-credit">
         DESIGNED FOR THE SPECIAL DAY OF MINH TRAN & DUC HUY © 2026
     </div>
