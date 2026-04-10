@@ -563,17 +563,15 @@
     <div class="cal-date-bottom disabled"></div>
     
     <!-- NGÀY 30 THÁNG 4: VÒNG TRÒN XANH + NHÀ THỜ -->
-    <div class="cal-date-bottom special-church">
-        <span class="church-icon">⛪</span>
+    <div class="cal-date-bottom special-day">
+        <span class="top-icon">⛪</span>
         <div class="circle-green">30</div>
     </div>
     
-    <!-- NGÀY 1 THÁNG 5: HÌNH CHIẾC NHẪN -->
-    <div class="cal-date-bottom special-ring">
-        <div class="ring-container">
-            <span class="diamond">💎</span>
-            <div class="ring-circle">1</div>
-        </div>
+    <!-- NGÀY 1 THÁNG 5: VÒNG TRÒN XANH + CẶP ĐÔI -->
+    <div class="cal-date-bottom special-day">
+        <span class="top-icon">👩‍❤️‍👨</span>
+        <div class="circle-green">1</div>
     </div>
     
     <div class="cal-date-bottom">2</div>
@@ -612,24 +610,24 @@
 </div>
 
 <style>
-    /* Tổng thể lưới lịch */
     .cal-grid-bottom {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 10px;
+        gap: 12px 10px; /* Tăng khoảng cách hàng để không bị dính icon */
         text-align: center;
         align-items: center;
+        padding-top: 20px;
     }
 
-    /* Style cho ngày 30 - Vòng tròn xanh + Nhà thờ */
-    .special-church {
+    .special-day {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .circle-green {
-        background-color: #82ad62; /* Màu xanh lá nhẹ */
+        background-color: #82ad62; /* Màu xanh lá giống ảnh mẫu */
         color: white;
         width: 35px;
         height: 35px;
@@ -639,44 +637,22 @@
         justify-content: center;
         font-weight: bold;
         z-index: 1;
+        font-size: 14px;
     }
-    .church-icon {
+
+    .top-icon {
         position: absolute;
-        top: -18px; /* Đẩy nhà thờ lên trên */
+        top: -20px; /* Đẩy icon lên trên vòng tròn */
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 18px;
         z-index: 2;
     }
 
-    /* Style cho ngày 1 - Chiếc nhẫn */
-    .special-ring {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .ring-container {
-        position: relative;
-        width: 38px;
-        height: 38px;
-    }
-    .ring-circle {
-        border: 3px solid #d1d1d1; /* Màu nhẫn bạc */
-        color: #82ad62; /* Số 1 màu xanh */
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        background: white;
-    }
-    .diamond {
-        position: absolute;
-        top: -10px; /* Viên kim cương nằm trên nhẫn */
-        left: 50%;
-        transform: translateX(-50%);
+    /* Các ngày thường */
+    .cal-date-bottom {
         font-size: 14px;
-        z-index: 3;
+        color: #666;
     }
 </style>
     <div class="footer-credit">
