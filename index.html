@@ -583,47 +583,75 @@
     </div>
 </section>
 
-    <!-- MODAL RSVP NHÀ GÁI -->
+   <!-- MODAL RSVP NHÀ GÁI -->
 <div id="rsvpModal" class="modal-rsvp" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center;">
+    
+    <style>
+        /* CSS cho các ô lựa chọn */
+        .option-item {
+            display: block;
+            position: relative;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        /* Ẩn cái nút tròn mặc định của radio đi */
+        .option-item input[type="radio"] {
+            display: none;
+        }
+
+        /* Khi ô được CHỌN: Đổi nền xanh rêu, chữ trắng, viền đậm */
+        .option-item:has(input[type="radio"]:checked) {
+            background-color: #2e3d2e !important;
+            color: white !important;
+            border-color: #2e3d2e;
+            transform: scale(1.02); /* Phóng to nhẹ cho nổi bật */
+        }
+    </style>
+
     <div class="modal-rsvp-content" style="background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; margin: auto; position: relative;">
         
-        <!-- Nút đóng (X) -->
-        <span id="closeRSVP" class="close-modal" style="color: #333; cursor: pointer; position: absolute; right: 20px; top: 10px; font-size: 28px; font-weight: bold;" 
+        <span class="close-modal" style="color: #333; cursor: pointer; position: absolute; right: 20px; top: 10px; font-size: 28px; font-weight: bold;" 
               onclick="document.getElementById('rsvpModal').style.display='none'">&times;</span>
         
         <h2 style="color: #2e3d2e; text-align: center; margin-bottom: 25px;">Xác nhận tham dự</h2>
         
         <form id="weddingForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe865uS_mF2amhrqjVan-8FyDb4jkel7HNX2peI77kjcgicfA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
             
-            <!-- Ô NHẬP TÊN (Đã cập nhật ID mới) -->
             <input type="text" name="entry.1666428782" style="width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 15px; margin-bottom: 20px; box-sizing: border-box;" placeholder="Nhập tên của bạn" required>
             
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
-                <!-- CHỌN THAM DỰ (Đã cập nhật ID mới) -->
-                <label class="option-item" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+            <div style="display: flex; flex-direction: column; margin-bottom: 30px;">
+                <!-- Lựa chọn 1 -->
+                <label class="option-item">
                     <input type="radio" name="entry.32637207" value="Tôi sẽ đến" required>
                     <span>Tôi sẽ đến</span>
                 </label>
                 
-                <label class="option-item" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <!-- Lựa chọn 2 -->
+                <label class="option-item">
                     <input type="radio" name="entry.32637207" value="Rất tiếc tôi không thể đến">
                     <span>Rất tiếc tôi không thể đến</span>
                 </label>
                 
-                <label class="option-item" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <!-- Lựa chọn 3 -->
+                <label class="option-item">
                     <input type="radio" name="entry.32637207" value="Chưa chắc chắn">
                     <span>Chưa chắc chắn</span>
                 </label>
             </div>
 
-            <!-- NÚT GỬI -->
             <button type="submit" style="width: 100%; background: #2e3d2e; color: white; padding: 18px; border-radius: 18px; border: none; font-weight: 700; cursor: pointer;">GỬI XÁC NHẬN</button>
         </form>
     </div>
 </div>
 
-    <!-- IFRAMES -->
-    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted){alert('Cảm ơn bạn đã xác nhận!'); document.getElementById('rsvpModal').style.display='none'; submitted=false;}"></iframe>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Cảm ơn bạn đã xác nhận tham dự!'); document.getElementById('rsvpModal').style.display='none'; window.location.reload(); }"></iframe>
+<script>var submitted = false;</script>
     <iframe name="wish_hidden_iframe" style="display:none;" onload="if(wishSubmitted){alert('Cảm ơn lời chúc của bạn!'); document.getElementById('wishForm').reset(); wishSubmitted=false;}"></iframe>
 
     <div id="lightbox" class="lightbox">
