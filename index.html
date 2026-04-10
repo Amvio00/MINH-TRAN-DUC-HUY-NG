@@ -459,7 +459,10 @@
 </div>
 
         <div style="text-align: center; margin-top: 20px;">
-    <a href="#" class="btn-rsvp">XÁC NHẬN THAM DỰ</a>
+    <!-- Dùng button và gọi đúng id rsvpModal -->
+    <button type="button" class="btn-rsvp" onclick="document.getElementById('rsvpModal').style.display='flex'">
+        XÁC NHẬN THAM DỰ
+    </button>
 </div>
     </section>
 
@@ -583,7 +586,8 @@
     <!-- MODAL RSVP -->
     <div id="rsvpModal" class="modal-rsvp">
         <div class="modal-rsvp-content">
-            <span id="closeRSVP" class="close-modal" style="color: #333;">&times;</span>
+            <span id="closeRSVP" class="close-modal" style="color: #333; cursor: pointer;" 
+      onclick="document.getElementById('rsvpModal').style.display='none'">&times;</span>
             <h2 style="color: var(--moss-green);">Xác nhận tham dự</h2>
             <form id="weddingForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdc3WO7y75vvNHK9YRHlW9e4l0iE1jrIZKZpMJ9ejt-kuw9iw/formResponse" method="POST" target="hidden_iframe">
                 <input type="text" name="entry.568495053" style="width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 15px; margin-bottom: 20px;" placeholder="Nhập tên của bạn" required>
@@ -626,7 +630,7 @@
         const guest = urlParams.get('guest');
         if (guest) { document.getElementById("guest-name").innerText = guest; }
 
-        const weddingDate = new Date("May 9, 2026 18:30:00").getTime();
+        const weddingDate = new Date("May 1, 2026 10:30:00").getTime();
         setInterval(function() {
             const now = new Date().getTime();
             const d = weddingDate - now;
