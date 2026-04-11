@@ -152,6 +152,10 @@
             margin: 40px auto; font-family: 'Playfair Display', serif; color: var(--moss-green);
         }
         .calendar-side { flex: 1; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 400; }
+        .time-display {
+    font-size: 2.2rem !important; /* Dùng !important để đảm bảo đè lên class chung */
+    font-weight: 700;
+}
         .calendar-center {
             display: flex; flex-direction: column; align-items: center; padding: 0 25px;
             border-left: 1px solid rgba(45, 62, 45, 0.4); border-right: 1px solid rgba(45, 62, 45, 0.4);
@@ -630,7 +634,7 @@
 </div>
 
 <div class="wedding-calendar" data-aos="fade-up">
-    <div class="calendar-side text-right">10:30</div>
+    <div class="calendar-side text-right time-display">10:30</div>
     <div class="calendar-center">
         <div class="cal-day">01</div>
         <div class="cal-month">05</div>
