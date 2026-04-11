@@ -487,41 +487,43 @@
 /* --- ĐIỀU CHỈNH TRÊN ĐIỆN THOẠI (Dưới 600px) --- */
 @media (max-width: 600px) {
     
-   /* --- SỬA LỖI DÀN HÀNG NHÀ TRAI - NHÀ GÁI --- */
-/* --- SỬA LỖI DÀN HÀNG NHÀ TRAI - NHÀ GÁI --- */
-.family-info {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Chia đúng 2 cột bằng nhau */
-    gap: 10px !important;
-    width: 100% !important;
-    padding: 0 5px !important;
-    align-items: start !important;
-}
+  /* Điều chỉnh cho điện thoại dưới 600px */
+@media (max-width: 600px) {
+    .family-info {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Chia đôi màn hình cứng 50/50 */
+        gap: 8px !important; /* Khoảng cách nhỏ để không chiếm chỗ của chữ */
+        width: 100% !important;
+        padding: 0 5px !important;
+        align-items: start !important;
+    }
 
-.family-side {
-    text-align: center !important;
-    min-width: 0 !important; /* Ngăn nội dung tràn khung */
-}
+    .family-side {
+        width: 100% !important;
+        min-width: 0 !important; /* Ngăn nội dung đẩy bung khung */
+        text-align: center !important;
+    }
 
-.family-side h3 {
-    font-size: 4vw !important; /* Chỉnh tiêu đề Nhà Trai/Gái vừa vặn */
-    margin-bottom: 5px !important;
-    white-space: nowrap !important;
-}
+    .family-side p {
+        /* Dùng đơn vị vw để chữ tự co lại theo màn hình khách */
+        font-size: 2.7vw !important; 
+        line-height: 1.3 !important;
+        white-space: nowrap !important; /* Ép tên Ba Mẹ nằm trên 1 hàng */
+        margin-bottom: 4px !important;
+        letter-spacing: -0.3px; /* Ép khít các chữ cái lại một chút */
+    }
 
-.family-side p {
-    font-size: 2.8vw !important; /* Thu nhỏ chữ một chút để đủ chỗ */
-    line-height: 1.3 !important;
-    margin-bottom: 3px !important;
-    white-space: normal !important; /* Cho phép xuống hàng ở những chỗ có thẻ <br> */
-    word-wrap: break-word !important;
-}
+    /* Riêng địa chỉ thì cho phép xuống hàng theo thẻ <br> của Trân */
+    .family-side p.address-text {
+        white-space: normal !important; 
+        font-size: 2.5vw !important;
+    }
 
-/* Đảm bảo địa chỉ có thẻ <br> sẽ xuống hàng đúng chỗ */
-.mobile-br {
-    display: block !important;
-    content: "";
-    margin-top: 2px !important;
+    .mobile-br {
+        display: block !important;
+        content: "";
+        margin-top: 2px !important;
+    }
 }
     </style>
 </head>
