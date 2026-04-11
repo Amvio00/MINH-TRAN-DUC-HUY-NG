@@ -480,15 +480,15 @@
     }
 }
         /* Mặc định trên máy tính: Ẩn lệnh xuống dòng */
-.br-mobile {
+.mobile-br {
     display: none;
 }
 
 /* Khi xem trên điện thoại (màn hình dưới 600px) */
 @media (max-width: 600px) {
-    .br-mobile {
-        display: block; /* Hiện lệnh xuống dòng */
-        content: ""; 
+    .mobile-br {
+        display: block !important; /* Dùng !important để đảm bảo nó luôn xuống hàng trên dt */
+        content: "";
         margin-top: 5px; /* Tạo một chút khoảng cách giữa 2 dòng cho đẹp */
     }
 }
