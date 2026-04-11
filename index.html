@@ -529,6 +529,32 @@
         margin-top: 2px !important;
     }
 }
+    .intro-quote .final-quote {
+    /* Đặt phông chữ Serif trang trọng, không dùng kiểu nghiêng (italic) */
+    font-family: "Playfair Display", "Times New Roman", serif; 
+    font-style: normal; /* Đảm bảo chữ đứng, không bị cong vẹo */
+    
+    /* Làm to cỡ chữ lên, ví dụ khoảng 3.5rem (so với 1.2-1.5rem ban đầu) */
+    font-size: 3.5rem; 
+    
+    /* Điều chỉnh các thông số khác để chữ trông trang nhã */
+    font-weight: 500;            /* Độ đậm vừa phải, không quá dày */
+    color: rgb(213, 222, 213);   /* Giữ màu chữ nhẹ nhàng */
+    letter-spacing: 0.1rem;      /* Tạo khoảng cách chữ một chút cho sang */
+    line-height: 1.2;            /* Khoảng cách dòng vừa phải */
+    text-transform: uppercase;   /* Viết hoa toàn bộ cho trang trọng */
+    
+    /* Căn chỉnh vị trí */
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* Đảm bảo họa tiết nhỏ vẫn được canh chỉnh đúng vị trí nếu cần */
+.intro-quote .final-quote + img,
+.intro-quote .final-quote + div.decor {
+    margin-top: 1rem;
+}
     </style>
 </head>
 <body>
@@ -546,11 +572,11 @@
     <section class="couple-intro">
         <img src="hình_hoa_1.png" class="flower-decor flower-1" alt="hoa">
         <img src="hình_hoa_2.png" class="flower-decor flower-2" alt="hoa">
-        <div class="intro-quote" data-aos="fade-up">
-            <h2>Đám Cưới<br>Là Một Ngày</h2>
-            <div class="line"></div>
-            <p style="font-family:'Playfair Display'; font-style:italic; opacity: 0.8;">HÔN NHÂN LÀ MỘT ĐỜI!</p>
-        </div>
+       <div class="intro-quote" data-aos="fade-up">
+    <h2>Đám Cưới<br>Là Một Ngày</h2>
+    <div class="line"></div>
+    <p class="final-quote">HÔN NHÂN LÀ MỘT ĐỜI!</p> 
+</div>
         <div class="couple-grid">
             <div class="person-card" data-aos="fade-up">
                 <img src="anh_co_dau.webp" alt="Cô dâu">
