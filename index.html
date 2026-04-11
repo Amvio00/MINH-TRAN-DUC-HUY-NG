@@ -530,23 +530,21 @@
     }
 }
     .intro-quote .final-quote {
-    /* Đặt phông chữ Serif trang trọng, không dùng kiểu nghiêng (italic) */
+    /* --- BẮT ĐẦU Cập nhật kích thước chữ --- */
+    /* Tăng đáng kể kích thước chữ để tạo điểm nhấn mạnh mẽ */
+    font-size: 5.25rem; /* Tăng từ 3.5rem lên 5.25rem */
+    /* --- KẾT THÚC Cập nhật kích thước chữ --- */
+
+    /* Giữ nguyên các thuộc tính khác để đảm bảo tính trang trọng */
     font-family: "Playfair Display", "Times New Roman", serif; 
-    font-style: normal; /* Đảm bảo chữ đứng, không bị cong vẹo */
-    
-    /* Làm to cỡ chữ lên, ví dụ khoảng 3.5rem (so với 1.2-1.5rem ban đầu) */
-    font-size: 5.5rem; 
-    
-    /* Điều chỉnh các thông số khác để chữ trông trang nhã */
-    font-weight: 500;            /* Độ đậm vừa phải, không quá dày */
-    color: rgb(213, 222, 213);   /* Giữ màu chữ nhẹ nhàng */
-    letter-spacing: 0.1rem;      /* Tạo khoảng cách chữ một chút cho sang */
-    line-height: 1.2;            /* Khoảng cách dòng vừa phải */
-    text-transform: uppercase;   /* Viết hoa toàn bộ cho trang trọng */
-    
-    /* Căn chỉnh vị trí */
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(213, 222, 213);
+    letter-spacing: 0.1rem;
+    line-height: 1.1; /* Giảm line-height một chút để cân bằng khi chữ to */
+    text-transform: uppercase;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem; /* Tăng khoảng cách phía trên một chút cho thoáng */
     padding: 0 1rem;
 }
 
@@ -554,6 +552,13 @@
 .intro-quote .final-quote + img,
 .intro-quote .final-quote + div.decor {
     margin-top: 1rem;
+}
+    /* Media Query cho thiết bị có màn hình nhỏ hơn 768px (điện thoại, máy tính bảng) */
+@media (max-width: 768px) {
+    .intro-quote .final-quote {
+        font-size: 3rem; /* Giảm xuống kích thước hợp lý hơn cho màn hình nhỏ */
+        margin-top: 2rem;
+    }
 }
     </style>
 </head>
