@@ -484,28 +484,37 @@
     display: none;
 }
 
-/* Khi xem trên điện thoại (màn hình dưới 600px) */
+/* --- ĐIỀU CHỈNH TRÊN ĐIỆN THOẠI (Dưới 600px) --- */
 @media (max-width: 600px) {
+    /* Hiển thị ngắt dòng địa chỉ khi cần */
     .mobile-br {
-        display: block !important; /* Dùng !important để đảm bảo nó luôn xuống hàng trên dt */
+        display: block !important;
         content: "";
-        margin-top: 5px; /* Tạo một chút khoảng cách giữa 2 dòng cho đẹp */
+        margin-top: 2px;
     }
-}
-         /* Giữ Nhà Trai - Nhà Gái song song nhưng thu nhỏ hết cỡ */
+
+    /* Giữ 2 bên song song nhưng dùng Flex: 1 để tự chia không gian */
     .family-info {
         display: flex !important;
-        flex-direction: row !important;
-        gap: 5px !important;
-        justify-content: space-around !important;
+        flex-direction: row !important; /* Luôn nằm ngang */
+        justify-content: space-between !important;
+        gap: 15px !important; /* Tạo khoảng cách an toàn ở giữa */
+        padding: 0 10px !important;
+    }
+
+    .family-side {
+        flex: 1 !important; /* Ép mỗi bên chiếm đúng 50% màn hình */
+        min-width: 0; /* Quan trọng: Ngăn chặn nội dung làm bung khung */
     }
 
     .family-side p {
-        /* Dùng vw cực nhỏ để không bị vỡ dòng tên Ba Mẹ */
-        font-size: 3.1vw !important; 
-        white-space: nowrap !important;
-        letter-spacing: -0.2px; /* Ép các chữ khít lại một chút */
+        /* Bỏ cái nowrap đi để tên dài quá thì tự xuống hàng cho đẹp */
+        white-space: normal !important; 
+        font-size: 3.2vw !important; /* Kích thước vừa đủ đọc */
+        line-height: 1.4 !important;
+        margin-bottom: 5px !important;
     }
+}
     </style>
 </head>
 <body>
